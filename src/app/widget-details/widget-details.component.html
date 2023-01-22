@@ -1,0 +1,43 @@
+<div *ngFor="let widg of widgets">
+  <h3 class="desc">Widget Details</h3>
+  <div class="row " style="justify-content: center;">
+    <div class="col col-lg-3 col-md-3 close add-center">
+      <div class="card back  " >
+        <div class="card-body">
+          <h5 class="card-title" style="color: #2D2D2D; font-weight: 700;text-align: center;"> {{widg.name}} </h5>
+          <h6 class="card-title" >count: {{widg.count}} </h6>
+          <div class="row">
+            <h6 class="desc">Description</h6>
+            <p> {{widg.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="desc">Widget Component Details</h3>
+  <div class="row " style="justify-content: center;">
+    <div class="col col-lg-3 col-md-3 close add-center" *ngFor="let item of widg.components ">
+      <div class="card back  " >
+        <div class="card-body">
+          <h5 class="card-title" style="color: #2D2D2D; font-weight: 700;text-align: center;"> {{item.name}} </h5>
+          <div class="row">
+            <h6 class="desc">Description</h6>
+            <p> {{item.description}}</p>
+          </div>
+        </div>
+        <!-- <div class="card-footer text-muted">
+          <div class="row">
+            <ul class="social-icons">
+              <li><a ><img width="30px" src="assets/icons/add.png"></a></li>
+              <li (click)="viewWidgetData(item.id)"><a ><img width="30px" src="assets/icons/view.png"></a></li>
+              <li><a ><img width="30px" src="assets/icons/edit.png"></a></li>
+              <li (click)="deleteWidgetAlert(item.id)" ><a ><img width="30px" src="assets/icons/remove.png"></a></li>
+            </ul>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+</div>

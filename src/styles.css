@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@font-face {
+  font-family: 'rota-black';
+  src: url('./assets/fonts/Rota/Rota-Black.otf');
+}
+@font-face {
+  font-family: 'rota-bold';
+  src: url('./assets/fonts/Rota/Rota-Bold.otf');
+}
+@font-face {
+  font-family: 'rota-med';
+  src: url('./assets/fonts/Rota/Rota-Medium.otf');
+}
+@font-face {
+  font-family: 'rota-reg';
+  src: url('./assets/fonts/Rota/Rota-Regular.otf');
+}
+html {
+  /* background: linear-gradient(to top right, #f6f6f6, #eaeaf2); */
+  /* width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; */
+ }
+ body {
+  background-color: linear-gradient(to top right, #f6f6f6, #eaeaf2);
+  background-color: #f6f6f6;
+  /* width: 100%;
+  height: 100%; */
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+ }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

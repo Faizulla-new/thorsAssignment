@@ -1,0 +1,129 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col logo-head">
+        <h3 class="center">Add Widget</h3>
+      </div>
+    </div>
+
+    <div class="row " style="justify-content: center;">
+        <div class="card back  " >
+          <div class="card-body">
+            <form (ngSubmit)="widgetSubmit()" [formGroup]="widgetForm">
+              <div class="row">
+                <div class="mb-3 col-4">
+                              <label class="form-label">Name</label>
+                              <input type="text" class="form-control" formControlName="name"
+                                 [ngClass]="{'is-invalid': formsubmit && addCateFormCnt['name'].errors}"
+                                  placeholder="Enter Name" />
+                              <div *ngIf="formsubmit && addCateFormCnt['name'].errors"
+                                  class="invalid-feedback">
+                                  <span *ngIf="addCateFormCnt['name'].errors['required']"></span>
+                              </div>
+                          </div>
+
+                          <div class="mb-3 col-4">
+                              <label class="form-label">Count</label>
+                              <input type="text" class="form-control" formControlName="count" (keypress)="numericOnly($event)" (paste)="$event.preventDefault()"
+                                 [ngClass]="{'is-invalid': formsubmit && addCateFormCnt['count'].errors}"
+                                  placeholder="Enter Count" />
+                              <div *ngIf="formsubmit && addCateFormCnt['count'].errors"
+                                  class="invalid-feedback">
+                                  <span *ngIf="addCateFormCnt['count'].errors['required']"></span>
+                              </div>
+                          </div>
+
+                          <div class="mb-3 col-4">
+                            <label class="form-label">Description</label>
+                            <textarea  cols="30" rows="3" class="form-control" formControlName="description"
+                            [ngClass]="{'is-invalid': formsubmit && addCateFormCnt['description'].errors}"
+                             placeholder="Enter Description"></textarea>
+                            <div *ngIf="formsubmit && addCateFormCnt['description'].errors"
+                                class="invalid-feedback">
+                                <span *ngIf="addCateFormCnt['description'].errors['required']"></span>
+                            </div>
+                        </div>
+
+
+              </div>
+              <h4>Add Component</h4>
+              <div class="row">
+                <div class="col-4">
+                  <div class="mb-3">
+                    <label class="form-label">Component Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"
+                       placeholder="Component Name" />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="mb-3">
+                    <label class="form-label">Component Description</label>
+                    <input type="text" class="form-control" [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"
+                       placeholder="Component Description" />
+                  </div>
+                </div>
+
+                <div class="col-2">
+                  <label class="form-label">Optional</label>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="true" [ngModelOptions]="{standalone: true}" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="optional">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      True
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" value="false" [ngModelOptions]="{standalone: true}" name="flexRadioDefault" id="flexRadioDefault2"  [(ngModel)]="optional" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      False
+                    </label>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="mb-3">
+                    <label class="form-label"> Add </label>
+                    <label class="form-control title" style="width: 65px;">
+                      <img height="40px" (click)="addNewCompany()" src="assets/icons/addd.png" alt="">
+                      <!-- <i (click)="addNewCompany()"  class="material-icons cust-icon para title" >add_circle</i> -->
+                    </label>
+                  </div>
+                </div>
+
+                <hr>
+                <table class="table" *ngIf="addRowItem.length">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Optional</th>
+                      <th scope="col">DELETE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of addRowItem; let i = index">
+                      <th scope="row"> {{i+1}} </th>
+                      <td> {{item.name}} </td>
+                      <td> {{item.description }} </td>
+                      <td> {{item.optional}} </td>
+                      <td> <img height="40px" class="material-icons cust-icon para title" src="assets/icons/remove.png" (click)="deleteMeasurements(i)" ></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+
+                <button type="reset"
+                    class="btn btn-secondary waves-effect" (click)="resetForm()">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            </form>
+        </div>
+        </div>
+    </div>
+
+    </div>
+
+
+

@@ -1,0 +1,25 @@
+.body{
+  /* background-color: #f6f6f6; */
+  /* background: linear-gradient(to top right, #f6f6f6, #eaeaf2); */
+  /* width: 100vw;
+  height: 100vh; */
+/* background: linear-gradient(to top right, #f6f6f6, #eaeaf2);width: 100%;height: 100%;background-repeat: no-repeat;background-size: cover; */
+}
+
+.logo-head{
+  text-align: center;
+}
+.logo{
+  height: 40px;
+  margin: 5% 0;
+}
+.close{
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .add-center{
+    text-align: -webkit-center;
+  }
+
+}

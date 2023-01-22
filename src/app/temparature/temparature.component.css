@@ -1,0 +1,39 @@
+.back{
+  background: #ececec;
+  border: none;
+  width: 250px;
+  border-radius: 15px;
+}
+.circle{
+  background: #5448c8;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.temp{
+  font-size: 20px;
+}
+.numb{
+  font-size: calc(2.375rem + 1.5vw);
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: baseline;
+}
+.count{
+  color: #999999;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+}
+.temp-as{
+  font-size: 10px;
+}
+.imgs{
+  height: 15px;
+  margin-right: 15px;
+}

@@ -1,0 +1,36 @@
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col logo-head">
+        <h3 class="center">Widget List</h3>
+      </div>
+    </div>
+    </div>
+
+    <div class="row " style="justify-content: center;">
+      <div class="col col-lg-3 col-md-3 close add-center" *ngFor="let item of widgets">
+        <div class="card back  " >
+          <div class="card-body">
+            <h5 class="card-title" style="color: #2D2D2D; font-weight: 700;text-align: center;"> {{item.name}} </h5>
+            <div class="row">
+              <h6 class="desc">Description</h6>
+              <p> {{item.description}}</p>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <div class="row">
+              <ul class="social-icons">
+                <li (click)="addWidgetData(0, false)"><a ><img width="30px" src="assets/icons/add.png"></a></li>
+                <li (click)="viewWidgetData(item.id)"><a ><img width="30px" src="assets/icons/view.png"></a></li>
+                <li (click)="addWidgetData(item.id, true)"><a ><img width="30px" src="assets/icons/edit.png"></a></li>
+                <li (click)="deleteWidgetAlert(item.id)" ><a ><img width="30px" src="assets/icons/remove.png"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
